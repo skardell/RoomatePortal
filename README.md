@@ -1,2 +1,24 @@
-This repository will be used for the ruby on rails code for the roommate portal.
-Update this file as necessary to contain all instructions for building, running locally, testing, and deploying this project.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
