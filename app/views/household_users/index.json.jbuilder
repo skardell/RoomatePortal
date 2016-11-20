@@ -1,0 +1,1 @@
+json.array! @household_users, partial: 'household_users/household_user', as: :household_user

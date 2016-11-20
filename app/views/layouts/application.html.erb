@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Roommate Connect</title>
+    <%= csrf_meta_tags %>
+    <script src="https://use.fontawesome.com/a00f86850a.js"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style>
+      body {
+        padding-bottom: 20px;
+      }
+    </style>
+  </head>
+
+    <%= yield %>
+  </body>
+</html>

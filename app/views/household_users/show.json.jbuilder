@@ -1,0 +1,1 @@
+json.partial! "household_users/household_user", household_user: @household_user
