@@ -50,6 +50,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-livereload', '~> 2.5', require: false
+  gem 'simplecov', :require => false
 end
 
 group :development do
