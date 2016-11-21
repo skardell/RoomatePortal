@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -25,6 +23,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pg'
 
+gem 'shoulda' #https://github.com/thoughtbot/shoulda
 
 gem 'rails-erd'
 
@@ -51,11 +50,6 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-livereload', '~> 2.5', require: false
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'selenium-webdriver'
-  gem 'simplecov', :require => false
 end
 
 group :development do
