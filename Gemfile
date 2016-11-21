@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pg'
 
-gem 'shoulda' #https://github.com/thoughtbot/shoulda
 
 gem 'rails-erd'
 
@@ -52,6 +51,11 @@ group :development, :test do
   gem 'guard'
   gem 'guard-cucumber'
   gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
+  gem 'simplecov', :require => false
 end
 
 group :development do
