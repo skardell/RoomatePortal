@@ -1,0 +1,13 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  padding-top: 50px;
+}
+
+@media (min-width: 1200px) {
+  .container{
+    max-width: 970px;
+  }
+}

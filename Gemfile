@@ -23,15 +23,14 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'pg'
 
-gem 'shoulda' #https://github.com/thoughtbot/shoulda
-
 gem 'rails-erd'
-
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
-
 gem 'devise'
+
+gem 'omniauth', '~> 1.3.1'
+gem 'omniauth-auth0', '~> 1.4.2'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -51,6 +50,8 @@ group :development, :test do
   gem 'guard-cucumber'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'simplecov', :require => false
+  gem 'shoulda', '~> 3.5', require: false
+  gem 'shoulda-matchers', '~> 2.0', require: false
 end
 
 group :development do

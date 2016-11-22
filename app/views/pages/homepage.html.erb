@@ -14,8 +14,8 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Signup  </a></li>
-        <li><a href="#about">Login  </a></li>
+        <li><a href="" onclick="lock.show({initialScreen: 'signUp'}); return false;">Signup</a></li>
+        <li><a href="" onclick="lock.show(); return false;">Login</a></li>
       </ul>
     </div><!--/.navbar-collapse -->
   </div>
@@ -27,7 +27,7 @@
     <h1 class="text-center">All your roommates in one place.</h1>
     <!--          <p class="text-center">Subtext</p>-->
     <div class="jumbotron_button text-center">
-      <p><a class="btn btn-primary btn-lg " href="#" role="button">Get Started</a></p>
+      <p><a class="btn btn-primary btn-lg " role="button" href="" onclick="lock.show(); return false;">Get Started</a></p>
     </div>
   </div>
 </div>
@@ -53,6 +53,7 @@
   <div class="container text-center">
     <h1>Stay in the loop</h1>
     <h2>Schedule guest visits, checkout transportation, and keep <br/>track of quiet hours. </h2>
+    <p><a class="btn btn-primary btn-lg " role="button" href=""  onclick="lock.show({initialScreen: 'signUp'}); return false;">Sign Up Now</a></p>
   </div>
 </div>
 
@@ -60,7 +61,7 @@
 
 <div class="container">
   <footer>
-    <p>SELT Team 15</p>
+    <p>SELT Team 17</p>
   </footer>
 </div> <!-- /container -->
 
