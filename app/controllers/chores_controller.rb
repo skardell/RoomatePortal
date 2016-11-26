@@ -25,6 +25,9 @@ class ChoresController < ApplicationController
   # POST /chores.json
   def create
     @chore = Chore.new(chore_params)
+    current_user.chores << @chore
+    current_user.household << @chore
+    @chore.status = 'Unaccepted'
 
     respond_to do |format|
       if @chore.save

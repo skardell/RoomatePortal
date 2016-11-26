@@ -1,25 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%= render "shared/navbars" %>
+<div class="container">
+  <div class="row">
+    <%= render "shared/sidebar" %>
 
-<h1>Bills</h1>
+    <div class="col-md-10">
+      <div id="midCol" data-spy="affix" data-offset-top="300">
+        <div>
+          <h2>Bills</h2>
+          <%= link_to 'Add Bill', new_bill_path %>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <%= @bills.each do |bill| %>
+        <div class="well">
+          <h3><%= bill.name %></h3>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Roommate</th>
+              <th>Amount</th>
+              <th>Due Date</th>
+              <th>Paid</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%= @user_bill_status.each do |status| %>
+            <tr>
+              <td>status.user.name</td>
+              <td>status.bill.cost</td>
+              <td>status.bill.due_date</td>
+              <td>status.status</td>
+            </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <button>Edit Bill</button>
+        </div>
+        <% end %>
 
-  <tbody>
-    <% @bills.each do |bill| %>
-      <tr>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
 
-<br>
-
-<%= link_to 'New Bill', new_bill_path %>
+  </div>
+</div>

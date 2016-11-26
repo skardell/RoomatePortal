@@ -1,25 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%= render "shared/navbars" %>
+<div class="container">
+  <div class="row">
+    <%= render "shared/sidebar" %>
 
-<h1>Grocery Lists</h1>
+    <div class="col-md-10">
+      <div id="midCol" data-spy="affix" data-offset-top="300">
+        <div>
+          <h2>Groceries</h2>
+          <%= link_to 'Add Grocery Item', new_grocery_item_path %>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div class="well">
+          <h3>My Groceries</h3>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Item</th>
+              <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Item A</td>
+              <td>XX</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
 
-  <tbody>
-    <% @grocery_lists.each do |grocery_list| %>
-      <tr>
-        <td><%= link_to 'Show', grocery_list %></td>
-        <td><%= link_to 'Edit', edit_grocery_list_path(grocery_list) %></td>
-        <td><%= link_to 'Destroy', grocery_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Grocery List', new_grocery_list_path %>
+      </div>
+    </div>
+  </div>
+</div>

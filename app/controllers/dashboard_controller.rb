@@ -1,5 +1,5 @@
 class DashboardController < SecuredController
   def show
-    @user = session[:userinfo]
+      @user = current_user
   end
 end

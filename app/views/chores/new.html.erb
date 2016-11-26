@@ -1,5 +1,27 @@
-<h1>New Chore</h1>
+<%= render "shared/navbars" %>
+<div class="container">
+  <div class="row">
+    <%= render "shared/sidebar" %>
 
-<%= render 'form', chore: @chore %>
+    <div class="col-md-10">
+      <div id="midCol" data-spy="affix" data-offset-top="300">
+        <div><h1>New Chore</h1></div>
 
-<%= link_to 'Back', chores_path %>
+        <%= simple_form_for @chore do |f| %>
+            <%= f.input :name %>
+            <%= f.input :description, as: :text %>
+            <%= f.input :deadline %>
+            <%= f.button :submit %>
+        <% end %>
+
+        <%= button_to 'Cancel', chores_path, class: 'btn btn-success btn-small'  %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
