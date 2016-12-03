@@ -1,0 +1,8 @@
+<p>Hello <%= @resource.email %>!</p>
+
+<p>Someone has requested a link to invite you to their household. You can do this through the link below.</p>
+
+<p><%= link_to 'Sign up', sign_up_url(@resource, reset_password_token: @token) %></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>You will not be added to the household unless you use the link above.</p>

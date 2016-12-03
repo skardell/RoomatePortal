@@ -6,7 +6,15 @@ Rails.application.routes.draw do
   resources :bills
   resources :grocery_items
   resources :chores
-  resources :households
+  resources :households do
+    collection do
+      get :invite_send
+    end
+  end
+  
+  
+  
+  
   resources :dashboard
 
   root to: 'pages#homepage'

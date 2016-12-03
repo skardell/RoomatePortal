@@ -55,6 +55,7 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'shoulda', '~> 3.5', require: false
   gem 'shoulda-matchers', '~> 2.0', require: false
+  gem 'foreman'
 end
 
 group :development do

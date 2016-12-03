@@ -15,7 +15,13 @@ class HouseholdsController < ApplicationController
   # GET /households/new
   def new
     @household = Household.new
+    self.code = rand(1000)
   end
+  
+  def invite_send
+    InviteMailer.invite_send(current_user.email).deliver
+    redirect_to index_households_path, alert: "Invite Sent"
+  end 
 
   # GET /households/1/edit
   def edit

@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20161125032724) do
 
   create_table "households", force: :cascade do |t|
     t.string   "name"
+    t.integer  "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
