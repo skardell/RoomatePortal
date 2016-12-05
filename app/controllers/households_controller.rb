@@ -19,7 +19,7 @@ class HouseholdsController < ApplicationController
   end
   
   def invite_send
-    InviteMailer.invite_send(current_user.email).deliver
+    InviteMailer.invite_send(current_user.email).deliver_now
     redirect_to households_path, alert: "Invite Sent"
   end 
 
