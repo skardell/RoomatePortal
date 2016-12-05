@@ -11,7 +11,7 @@ before_action :configure_sign_up_params, only: [:create]
   def create
     super do
       puts "got here"
-      resource.build_household(name: params[:household_name])
+      resource.build_household(name: params[:household_name], code: params[:household_key])
       resource.save
     end
   end
