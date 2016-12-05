@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20161125032724) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "code"
   end
 
   create_table "user_bill_statuses", force: :cascade do |t|

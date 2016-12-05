@@ -11,7 +11,7 @@ before_action :configure_sign_up_params, only: [:create]
   def create
     super do
       puts "got here"
-      resource.build_household(name: params[:household_name], code: params[:household_key])
+      resource.build_household(name: params[:household_name])
       resource.save
     end
   end
@@ -44,7 +44,7 @@ before_action :configure_sign_up_params, only: [:create]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:household_name, :household_key])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:household_name])
   end
 
   # If you have extra params to permit, append them to the sanitizer.

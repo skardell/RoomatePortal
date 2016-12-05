@@ -4,3 +4,4 @@ class InviteMailer < ApplicationMailer
         mail to: email, subject: "Household Invite", from: 'srkardell@gmail.com'
     end
 end
+
