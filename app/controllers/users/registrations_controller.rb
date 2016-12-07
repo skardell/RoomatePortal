@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       puts "got here"
-      resource.build_household(name: params[:household, :code])
+      resource.build_household(name: params[:household_name])
       resource.save
     end
   end
@@ -44,7 +44,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:household, :code])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:household_name])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
