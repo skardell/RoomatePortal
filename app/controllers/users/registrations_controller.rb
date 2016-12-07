@@ -10,14 +10,51 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
   def create
     super do
-      puts "got here"
-      resource.build_household(code: sign_up_params[:code])
-      puts "GOT HERE"
-      resource.save
-      puts "HERE GOT"
+      
+     # puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
+      #hname = :household_name
+      if sign_up_params[:code] == ""
+        
+        puts "#{sign_up_params[:household_name]}" + "\n\n\n"
+        if Household.exists?(name: sign_up_params[:household_name])  #@user.household.exists?
+          
+          move("Household Taken")
+          break
+        else
+          resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
+          resource.save
+        end
+      else
+        if Household.exists?(name: sign_up_params[:household_name]) #@user.household.exists?
+        
+          house = Household.where(name: sign_up_params[:household_name]).take #.where(sign_up_params[:household_name])
+          if sign_up_params[:code] == house.code
+            #resource.build_user(household_id: 2)
+            resource.save
+            #@user = User.new
+          else
+            #puts "#{house.code}" + "\n\n\n"
+            
+            move("Invalid Code")
+            break
+          end
+        else
+         
+          move("household does not exist")
+          break
+        end
+      end
+    
+      
+      
     end
   end
-
+  
+  def move(sss)
+    #ApplicationController.flash_message(sss)
+    redirect_to new_user_registration_path
+    puts sss
+  end
 # GET /resource/edit
 # def edit
 #   super
