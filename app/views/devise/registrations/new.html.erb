@@ -20,13 +20,16 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
   <div class="field">
     <%= f.label :household %> <br />
     <%= f.text_field :household %> <br />
   </div>
+
   <div class="field">
     <%= f.label :code %> <br />
-    <%= f.text_field :code %> <br />
+    <%= f.text_field :code %> <br/>
+    <p>Enter code when joining a household, otherwise leave blank.</p>
   </div>
 
   <div class="actions">
