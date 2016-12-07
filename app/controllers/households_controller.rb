@@ -14,8 +14,20 @@ class HouseholdsController < ApplicationController
 
   # GET /households/new
   def new
-    @household = Household.new
-    self.code = rand(1000)
+    if @user.code == NULL
+      @household = Household.new
+      household.code = rand(1000)
+      household.name = @user.household
+      #self.code = rand(1000)
+    elsif @user.household.exists?
+      if @user.code == @user.household.code
+        #do nothing
+      else 
+        flash "Incorrect Code" 
+        redirect_to registration_path
+      end
+    end
+    
   end
   
   def invite_send

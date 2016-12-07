@@ -14,7 +14,26 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    if @user.code == NULL
+      if Households.exists?(name: @user.household.name)  #@user.household.exists?
+        flash "Household Taken"
+        redirect_to registration_path
+      else
+        @user = User.new
+      end
+    else
+      if Households.exists?(name: @user.household.name) #@user.household.exists?
+        if @user.code == @user.household.code
+          @user = User.new
+        else
+          flash "invalid code"
+          redirect_to registration_path
+        end
+      else
+        flash "household does not exist"
+      end
+    end
+    
   end
 
   # GET /users/1/edit
