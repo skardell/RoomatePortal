@@ -12,7 +12,6 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
   database: roommate_connect_dev
 
 # Warning: The database defined as "test" will be erased and
