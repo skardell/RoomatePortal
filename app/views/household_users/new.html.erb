@@ -3,8 +3,9 @@
 Invite Roommates! <br />
 <input id="email" name="email" placeholder="Enter email address" type="text" />
 
+<%= text_field_tag(:query) %>
 
-<%= link_to "send", invite_send_households_path  %>
+<%= link_to "send", invite_send_households_path, {:email => "christopher-choi@uiowa.edu"} %>
 
 
 
