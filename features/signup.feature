@@ -2,7 +2,7 @@ Feature: Signup
 
   Background:
     Given I am on the homepage
-    When I click on the Signup link/button
+    When I click on the Signup link
     Then I should see the registration form
 
   Scenario: A user successfully signs up
