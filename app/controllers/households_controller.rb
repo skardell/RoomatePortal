@@ -32,7 +32,7 @@ class HouseholdsController < ApplicationController
   
   def invite_send
     InviteMailer.invite_send(current_user.email, current_user.household.name, current_user.household.code).deliver_now
-    redirect_to households_path, flash: "Invite Sent"
+    redirect_to households_path#, flash: "Invite Sent"
   end 
 
   # GET /households/1/edit
