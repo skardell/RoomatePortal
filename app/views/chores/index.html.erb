@@ -24,7 +24,7 @@
               <% @chores.each do |chore| %>
               <tr>
                 <td><%= chore.name %></td>
-                <td><%=  %></td>
+                <td><%= chore.user_id %></td>
                 <td><%= chore.deadline %></td>
                 <td><%= chore.status %></td>
               </tr>

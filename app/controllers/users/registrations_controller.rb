@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       puts "got here"
-      resource.build_household(code: sign_up_params[:code])
+      resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
       puts "GOT HERE"
       resource.save
       puts "HERE GOT"

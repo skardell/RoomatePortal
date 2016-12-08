@@ -17,7 +17,7 @@ class HouseholdsController < ApplicationController
     if @user.code == NULL
       @household = Household.new
       household.code = rand(1000)
-      household.name = @user.household
+      household.name = user.household.name
       #self.code = rand(1000)
     elsif @user.household.exists?
       if @user.code == @user.household.code

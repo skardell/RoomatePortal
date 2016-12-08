@@ -15,6 +15,8 @@ class ChoresController < ApplicationController
   # GET /chores/new
   def new
     @chore = Chore.new
+    @chore.user = current_user
+    @chore.household= current_user.household
   end
 
   # GET /chores/1/edit
@@ -25,9 +27,6 @@ class ChoresController < ApplicationController
   # POST /chores.json
   def create
     @chore = Chore.new(chore_params)
-    current_user.chores << @chore
-    current_user.household << @chore
-    @chore.status = 'Unaccepted'
 
     respond_to do |format|
       if @chore.save
@@ -72,6 +71,7 @@ class ChoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chore_params
-      params.fetch(:chore, {})
+      # params.fetch(:chore, {})
+      params.require(:chore).permit(:name,:description,:deadline)
     end
 end
