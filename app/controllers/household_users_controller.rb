@@ -21,7 +21,7 @@ class HouseholdUsersController < ApplicationController
   end
   
   def invite_send
-    email = params[:email]
+    email = household_user_params[:email]
     #email = "#{:email}"
     puts "\n\n\n\n\n #{email}"
     InviteMailer.invite_send(email, current_user.household.name, current_user.household.code).deliver_now
@@ -81,5 +81,6 @@ class HouseholdUsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def household_user_params
       params.fetch(:household_user, :email,{})
+      params.require(:household_user).permit(:email)
     end
 end

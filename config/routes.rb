@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :grocery_lists
   resources :household_users do
     collection do
-      get :invite_send
+      post :invite_send
     end
   end
   resources :bills
