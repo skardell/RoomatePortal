@@ -14,7 +14,9 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
     if @user.code == NULL
+      puts "AHHHHHHHHH #{@user.household.name} \r \n \n poop"
       if Households.exists?(name: @user.household.name)  #@user.household.exists?
         flash "Household Taken"
         redirect_to registration_path

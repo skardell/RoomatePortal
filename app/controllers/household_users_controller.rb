@@ -15,7 +15,18 @@ class HouseholdUsersController < ApplicationController
   # GET /household_users/new
   def new
     @household_user = HouseholdUser.new
+    
+    @email = params[:email]
+    #invite_send
   end
+  
+  def invite_send
+    email = params[:email]
+    #email = "#{:email}"
+    puts "\n\n\n\n\n #{email}"
+    InviteMailer.invite_send(email, current_user.household.name, current_user.household.code).deliver_now
+    redirect_to households_path#, flash: "Invite Sent"
+  end 
 
   # GET /household_users/1/edit
   def edit
@@ -69,6 +80,6 @@ class HouseholdUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def household_user_params
-      params.fetch(:household_user, {})
+      params.fetch(:household_user, :email,{})
     end
 end
