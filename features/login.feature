@@ -2,7 +2,7 @@ Feature: Login
 
   Background:
     Given I am on the homepage
-    When I click on the Login link/button
+    When I click on the Login link
     Then I should see the login form
 
   Scenario: User logs in successfully
