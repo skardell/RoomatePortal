@@ -30,8 +30,9 @@ class HouseholdsController < ApplicationController
     
   end
   
-  def invite_send
-    email = :email
+  def invite_send(email)
+    #email = params[:email]
+    #email = "#{:email}"
     puts "\n\n\n\n\n #{email}"
     InviteMailer.invite_send(email, current_user.household.name, current_user.household.code).deliver_now
     redirect_to households_path#, flash: "Invite Sent"
