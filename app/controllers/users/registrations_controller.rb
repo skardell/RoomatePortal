@@ -11,9 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       puts "got here"
-      resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
+      #resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
       puts "GOT HERE"
-      resource.save
+      #resource.save
       puts "HERE GOT"
 
      # puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
@@ -31,16 +31,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
       else
         if Household.exists?(name: sign_up_params[:household_name]) #@user.household.exists?
+          
         
           house = Household.where(name: sign_up_params[:household_name]).take #.where(sign_up_params[:household_name])
           if sign_up_params[:code] == house.code
-            #resource.build_user(household_id: 2)
+            puts "\n\n\n\n\n HELLO"
+            resource.build_household(name: sign_up_params[:household_name])
             resource.save
+            
+            #current_user.household_id = User.where(household_name: current_user.household.name).first.household_id
+           
+            
             #@user = User.new
           else
             #puts "#{house.code}" + "\n\n\n"
             
-            move("Invalid Code")
+            move("Invalid Code\n\n\n\n\n\n")
             break
           end
         else

@@ -48,6 +48,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    if @user.household_id == ""
+      @user.household_id = 1
+    end
 
     respond_to do |format|
       if @user.save
