@@ -26,18 +26,16 @@ class ChoresController < ApplicationController
   # POST /chores
   # POST /chores.json
   def create
-    #puts "#{chore_params[:name]}" + "\n\n\n\n\n\n"
     @chore = Chore.new chore_params
     @chore.user = current_user
     @chore.household= current_user.household
+    @chore.status = 'Unaccepted'
 
     respond_to do |format|
       if @chore.save!
-        
         format.html { redirect_to @chore, notice: 'Chore was successfully created.' }
         format.json { render :show, status: :created, location: @chore }
       else
-        puts "\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\\n\n\n"
         format.html { render :new }
         format.json { render json: @chore.errors, status: :unprocessable_entity }
       end

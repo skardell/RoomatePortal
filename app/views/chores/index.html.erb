@@ -14,7 +14,7 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th>Description</th>
+                <th>Name</th>
                 <th>Requested By</th>
                 <th>Due Date</th>
                 <th>Status</th>
@@ -22,12 +22,14 @@
             </thead>
             <tbody>
               <% @chores.each do |chore| %>
-              <tr>
-                <td><%= chore.name %></td>
-                <td><%= chore.user_id %></td>
-                <td><%= chore.deadline %></td>
-                <td><%= chore.status %></td>
-              </tr>
+                <% if chore.household_id == current_user.household_id %>
+                  <tr>
+                    <td><%= chore.name %></td>
+                    <td><%= chore.user_id %></td>
+                    <td><%= chore.deadline %></td>
+                    <td><%= chore.status %></td>
+                  </tr>
+                <% end %>
               <% end %>
             </tbody>
           </table>
