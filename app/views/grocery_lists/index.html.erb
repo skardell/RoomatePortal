@@ -5,6 +5,19 @@
 
     <div class="col-md-10">
       <div id="midCol" data-spy="affix" data-offset-top="300">
+        
+        <script>
+        <%=if !GroceryList.exists?(user: current_user.id) 
+            #redirect_to new_grocery_list_path 
+          
+          
+         
+           end %>
+        </script>
+        
+        
+        
+        
         <div>
           <h2>Groceries</h2>
           <%= link_to 'Add Grocery Item', new_grocery_item_path %>

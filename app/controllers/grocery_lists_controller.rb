@@ -24,7 +24,8 @@ class GroceryListsController < ApplicationController
   # POST /grocery_lists
   # POST /grocery_lists.json
   def create
-    @grocery_list = GroceryList.new(grocery_list_params)
+    @grocery_list = GroceryList.new(params[:user])
+    puts "HELLO"
 
     respond_to do |format|
       if @grocery_list.save
@@ -70,5 +71,6 @@ class GroceryListsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def grocery_list_params
       params.fetch(:grocery_list, {})
+      params.require(:grocery_list).permit(:user)
     end
 end
