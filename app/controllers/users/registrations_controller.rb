@@ -10,16 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
   def create
     super do
-<<<<<<< HEAD
-      # puts "got here"
-      # #resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
-      # puts "GOT HERE"
-      # #resource.save
-      # puts "HERE GOT"
 
-     # puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
-=======
->>>>>>> 9783fe8947d45fafe8b817fed6a14647e07ba49f
       #hname = :household_name
 
       if sign_up_params[:code] == ""

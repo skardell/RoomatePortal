@@ -3,7 +3,7 @@ When(/^I click on the Login link$/) do
 end
 
 Then(/^I should see the login form$/) do
-  #find(:xpath, '/html/body/h2').should have_content('Log in')
+  find(:xpath, '/html/body//h1').should have_content('Log In')
 end
 
 Given(/^A user with the email "email@email.com" and password "password"$/) do

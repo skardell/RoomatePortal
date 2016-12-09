@@ -3,7 +3,7 @@ When(/^I click on the Signup link$/) do
 end
 
 Then(/^I should see the registration form$/) do
-  #find(:xpath, '/html/body/h2').should have_content('Sign up')
+  find(:xpath, '/html/body//h1').should have_content('Sign Up')
 end
 
 When(/^I fill in the registration form$/) do

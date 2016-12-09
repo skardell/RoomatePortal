@@ -58,6 +58,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 2.0', require: false
   gem 'foreman'
   gem 'factory_girl'
+  gem 'selenium-webdriver'
 end
 
 group :development do
