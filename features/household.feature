@@ -9,8 +9,8 @@ Feature: Household information page
     Then I should be on the household information page
 
   Scenario: An admin visits the household page
-    Given I am the creator of the household
+    When I am the creator of the household
+    Then I should be able to edit the household name
     When I visit the household page
     Then I should be on the household information page
-    And I should be able to edit the household name
     And I can invite more members to the household through the "Invite" button
