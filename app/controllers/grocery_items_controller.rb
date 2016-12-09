@@ -29,8 +29,8 @@ class GroceryItemsController < ApplicationController
 
     respond_to do |format|
       if @grocery_item.save
-        format.html { redirect_to @grocery_item, notice: 'Grocery item was successfully created.' }
-        format.json { render :show, status: :created, location: @grocery_item }
+        format.html { redirect_to grocery_lists_path, notice: 'Grocery item was successfully created.' }
+        format.json { render :show, status: :created, location: grocery_lists_path }
       else
         format.html { render :new }
         format.json { render json: @grocery_item.errors, status: :unprocessable_entity }
