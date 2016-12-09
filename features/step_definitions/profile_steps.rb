@@ -13,7 +13,7 @@ When(/^I visit the Account page$/) do
 end
 
 Then(/^I should see my account information$/) do
-  find(:xpath, '/html/body//h2').should have_content('Edit User')
+  find(:xpath, '/html/body//h1').should have_content('Account Settings')
 end
 
 When(/^I am on my Account page$/) do
@@ -29,7 +29,7 @@ When(/^I edit my account information$/) do
 end
 
 When(/^I press the "Confirm" button$/) do
-  click_on 'Update'
+  click_on 'Save'
 end
 
 Then(/^I should see my updated account information$/) do

@@ -32,12 +32,11 @@ When(/^I click on the "Cancel" button$/) do
 end
 
 Then(/^I should return to the Groceries page$/) do
-  find(:xpath, '/html/body//h2').should have_content('Groceries')
+  find(:xpath, '/html//h2').should have_content('Groceries')
 end
 
 Then(/^I should see my added grocery items$/) do
-  # puts page.html
-  find(:xpath, 'html/body//tbody/tr/td[1]').should have_content('Cheese')
+  find(:xpath, '/html/body//tbody/tr/td[1]').should have_content('Cheese')
 end
 
 When(/^I click on the X associated with a grocery item$/) do
