@@ -25,7 +25,7 @@
                 <% if chore.household_id == current_user.household_id %>
                   <tr>
                     <td><%= link_to chore.name, chore %></td>
-                    <td><%= chore.user_id %></td>
+                    <td><%= chore.requestor %></td>
                     <td><%= chore.deadline %></td>
                     <td><%= chore.status %></td>
                   </tr>
