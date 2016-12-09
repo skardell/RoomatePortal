@@ -36,3 +36,7 @@ end
 Then(/^I should remain on the login page$/) do
   visit "/"
 end  
+
+And(/^I should see a flash message indicating incorrect email or password$/) do
+  
+end
