@@ -1,6 +1,9 @@
 <script>
-<%= @current_user = current_user %>
-<%= @current_user.household_id = User.where(household_name: current_user.household.name).first.household_id %>
+<%= if current_user.code != "" 
+       current_user.household_id = User.where(household_name: current_user.household_name).first.household_id  
+       current_user.save 
+    end %>
+<%=   puts "\n\n\n\n\n\n #{current_user.household_id} \n\n\n\n\n" %>
 </script>
 
 <%= render "shared/navbars" %>
