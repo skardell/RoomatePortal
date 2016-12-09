@@ -10,13 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
   def create
     super do
-      puts "got here"
-      #resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
-      puts "GOT HERE"
-      #resource.save
-      puts "HERE GOT"
-
-     # puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
       #hname = :household_name
       if sign_up_params[:code] == ""
         
@@ -29,6 +22,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
           resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
           #resource.build_grocery_list(user_id: sign_up_params[:email])
           resource.save
+
+
+
         end
       else
         if Household.exists?(name: sign_up_params[:household_name]) #@user.household.exists?
@@ -40,7 +36,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
             resource.build_household(name: sign_up_params[:household_name])
             #resource.build_grocery_list(user_id: sign_up_params[:email])
             resource.save
-            
+
+
             #current_user.household_id = User.where(household_name: current_user.household.name).first.household_id
            
             
@@ -66,6 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to new_user_registration_path
     puts sss
   end
+
 # GET /resource/edit
 # def edit
 #   super

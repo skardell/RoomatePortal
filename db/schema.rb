@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209080647) do
+ActiveRecord::Schema.define(version: 20161209112651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20161209080647) do
     t.integer  "grocery_list_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "amount"
     t.index ["grocery_list_id"], name: "index_grocery_items_on_grocery_list_id", using: :btree
   end
 
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 20161209080647) do
     t.inet     "last_sign_in_ip"
     t.string   "code"
     t.string   "household_name"
+    t.string   "role"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["household_id"], name: "index_users_on_household_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
