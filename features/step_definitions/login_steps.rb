@@ -11,8 +11,30 @@ Given(/^A user with the email "email@email.com" and password "password"$/) do
   user.save
 end
 
-When('^I sign in with email "email@email.com" and password "password"$/') do
+When(/^I sign in with email "email@email.com" and password "password"$/) do
   fill_in 'user_email', :with => 'email@email.com'
   fill_in 'user_password', :with => 'password'
+  click_on 'Log in'
+end
+
+Given(/^A user with the email "email@email.com" and password "password"$/) do
+  user = FactoryGirl.create(:user)
+  user.save
+end
+
+When(/^I sign in with email "notmyemail@email.com" and password "password"$/) do
+  fill_in 'user_email', :with => 'notmyemail@email.com'
+  fill_in 'user_password', :with => 'password'
+  click_on 'Log in'
+end
+
+Given(/^A user with the email "email@email.com" and password "password"$/) do
+  user = FactoryGirl.create(:user)
+  user.save
+end
+
+When(/^I sign in with email "email@email.com" and password "notmypassword"$/) do
+  fill_in 'user_email', :with => 'email@email.com'
+  fill_in 'user_password', :with => 'notmypassword'
   click_on 'Log in'
 end
