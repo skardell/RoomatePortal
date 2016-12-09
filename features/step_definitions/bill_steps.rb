@@ -1,17 +1,18 @@
 When(/^I visit the Bills page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_on 'Bills'
 end
 
 Then(/^I should see the Bills lists$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(:xpath, '/html/body//h2').should have_content('Bills')
 end
 
 Given(/^I am on the Bills page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/bills'
 end
 
 When(/^I click on the "Add Bill" link$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending # Error in website on add bill with only one user
+  click_on 'Add Bill'
 end
 
 Then(/^I should be on the add bill page$/) do

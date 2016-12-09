@@ -1,6 +1,17 @@
 Given(/^I am logged into my account$/) do
   user = FactoryGirl.create(:user)
   login_as(user, :scope => :user)
+  visit '/dashboard'
+end
+
+Given(/^I am logged in as a second user$/) do
+  user = FactoryGirl.create(:user2)
+  login_as(user2, :scope => :user)
+  visit '/dashboard'
+end
+
+Given (/^I am logged out$/) do
+  logout(:user)
 end
 
 When(/^I visit the Account page$/) do

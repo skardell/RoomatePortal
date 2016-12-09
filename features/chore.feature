@@ -1,7 +1,7 @@
 Feature: Chore page features
 
   Background:
-    Given I am signed into my account
+    Given I am logged into my account
 
   Scenario: A user visits the Chores page
     When I visit the Chores page
@@ -16,19 +16,19 @@ Feature: Chore page features
     Given I am on the chore creation page
     When I fill in the information forms
     And I click the "Create" button
-    Then I should return to the Chores page
-    And I should see my created chore in the chores list
+    Then I should be on the page detailing the chore I just created
 
   Scenario: A user cancels chore creation
     Given I am on the chore creation page
-    When I click on the "Cancel" button
-    Then I should return to the Chores page
+    When I click on the chore's "Cancel" button
+    Then I should see the list of Household Chores
 
   Scenario: A user views an incomplete chore
-    Given I am on the Chores page
-    When I click on an incomplete chore
+    Given I am on the chore creation page
+    When I fill in the information forms
+    And I click the "Create" button
     Then I should be on that chore's information page
-    And I can return to the Chores page by clicking the "Back" button
+    # And I can return to the Chores page by clicking the "Back" button
     And I can accept the chore by clicking the "Accept" button
 
   Scenario: A user views a chore accepted by another user

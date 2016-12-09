@@ -1,10 +1,6 @@
 Given (/^App is loaded$/) do
 end
 
-Given (/^I am logged out$/) do
-  logout(:user)
-end
-
 When(/^I am on the homepage$/) do
   visit "/"
 end
