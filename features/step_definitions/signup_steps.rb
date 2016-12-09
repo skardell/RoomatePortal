@@ -19,5 +19,16 @@ When(/^I press the "Create Account" button$/) do
 end
 
 Then(/^I should see a flash message indicating success$/) do
-  pending
+  
+end
+
+When(/^I fill in the registration form with existing information$/) do
+  fill_in 'user_email', :with => 'email@email.com'
+  fill_in 'user_password', :with => 'password'
+  fill_in 'user_password_confirmation', :with => 'password'
+  fill_in 'user_household_name', :with => 'houehold'
+end
+
+Then(/^I should see a flash message indicating failure$/) do
+  
 end
