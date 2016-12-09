@@ -27,5 +27,6 @@ end
 
 And(/^I should see a flash "(.*?)"$/) do |flashType|
   puts "Checking flash + #{flashType}"
+  pending
 end
 
