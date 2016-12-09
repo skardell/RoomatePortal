@@ -17,6 +17,10 @@ When(/^I sign in with email "email@email.com" and password "password"$/) do
   click_on 'Log in'
 end
 
+Then(/^I should be on my household dashboard$/) do
+  visit "/"
+end  
+
 When(/^I sign in with email "notmyemail@email.com" and password "password"$/) do
   fill_in 'user_email', :with => 'notmyemail@email.com'
   fill_in 'user_password', :with => 'password'
@@ -28,3 +32,7 @@ When(/^I sign in with email "email@email.com" and password "notmypassword"$/) do
   fill_in 'user_password', :with => 'notmypassword'
   click_on 'Log in'
 end
+
+Then(/^I should remain on the login page$/) do
+  visit "/"
+end  
