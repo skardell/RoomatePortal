@@ -29,7 +29,7 @@ class GroceryItemsController < ApplicationController
 
     respond_to do |format|
       if @grocery_item.save
-        format.html { redirect_to grocery_lists_path, notice: 'Grocery item was successfully created.' }
+        format.html { redirect_to grocery_lists_path }
         format.json { render :show, status: :created, location: grocery_lists_path }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class GroceryItemsController < ApplicationController
   def destroy
     @grocery_item.destroy
     respond_to do |format|
-      format.html { redirect_to grocery_items_url, notice: 'Grocery item was successfully destroyed.' }
+      format.html { redirect_to grocery_items_url }
       format.json { head :no_content }
     end
   end

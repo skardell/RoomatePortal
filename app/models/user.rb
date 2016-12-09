@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :chores
   has_many :user_bill_statuses
 
-  after_create :make_glist
+  before_create :make_glist
 
   def make_glist
     @grocery_list = GroceryList.new
