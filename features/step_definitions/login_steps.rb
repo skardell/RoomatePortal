@@ -18,7 +18,7 @@ When(/^I sign in with email "email@email.com" and password "password"$/) do
 end
 
 Then(/^I should be on my household dashboard$/) do
-  visit "/"
+  visit "dashboard"
 end  
 
 When(/^I sign in with email "notmyemail@email.com" and password "password"$/) do
@@ -40,3 +40,4 @@ end
 And(/^I should see a flash message indicating incorrect email or password$/) do
   
 end
+
