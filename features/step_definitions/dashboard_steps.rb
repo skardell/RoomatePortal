@@ -1,7 +1,10 @@
 When(/^I visit the Dashboard page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit '/dashboard'
 end
 
 Then(/^I should see my upcoming chores, bills, and groceries$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(:xpath, '//*[@id="sidebar"]/li[1]/a').should have_content('Chores')
+  find(:xpath, '//*[@id="sidebar"]/li[2]/a').should have_content('Bills')
+  find(:xpath, '//*[@id="sidebar"]/li[3]/a').should have_content('Groceries')
+  find(:xpath, '//*[@id="sidebar"]/li[4]/a').should have_content('Household')
 end
