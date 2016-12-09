@@ -4,11 +4,12 @@ Feature: Groceries page features
     Given I am signed into my account
 
   Scenario: A user visits the Groceries page
-    When I visit the Groceries page
+    When I am on the Groceries page
     Then I should see the groceries lists
 
   Scenario: A user visits the add grocery item page
-    Given I am on the Groceries page
+    When I am on the Groceries page
+    Then I should see the groceries lists
     When I click on the "Add Grocery Item" link
     Then I should be on the add grocery item page
 
