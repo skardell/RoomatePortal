@@ -23,8 +23,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
           resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
           resource.save
 
-
-
         end
       else
         if Household.exists?(name: sign_up_params[:household_name]) 
