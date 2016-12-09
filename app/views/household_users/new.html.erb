@@ -11,25 +11,9 @@
     <%= f.button :submit %>
       </div>
     
-    <%= link_to "send", invite_send_household_users_path%>
     
   </p>
 <% end %>
 
 
 
-Invite Roommates! <br />
-<input id="email" name="email" placeholder="Enter email address" type="text" />
-
-
-<%= link_to "send", invite_send_households_path%>
-
-<%= link_to "send", new_household_user_path%>
-
-
-
-<%= render 'form', household_user: @household_user %>
-
-
-
-<%= link_to 'Back', households_path %>
