@@ -19,7 +19,7 @@ When(/^I press the "Create Account" button$/) do
 end
 
 Then(/^I should see a flash message indicating success$/) do
-  
+  flash[:success].should be_present
 end
 
 When(/^I fill in the registration form with existing information$/) do
@@ -30,5 +30,5 @@ When(/^I fill in the registration form with existing information$/) do
 end
 
 Then(/^I should see a flash message indicating failure$/) do
-  
+  pending
 end

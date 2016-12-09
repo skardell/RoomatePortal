@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         flash "Household Taken"
         redirect_to registration_path
       else
+        flash[:success] = "User Created"
         @user = User.new
       end
     else
