@@ -1,5 +1,6 @@
 Given(/^I am logged into my account$/) do
-  #pending # Write code here that turns the phrase above into concrete actions
+  user = FactoryGirl.create(:user)
+  login_as(user, :scope => :user)
 end
 
 When(/^I visit the Account page$/) do

@@ -1,7 +1,8 @@
 Feature: Signup
 
   Background:
-    Given I am on the homepage
+    Given I am logged out
+    And I am on the homepage
     When I click on the Signup link
     Then I should see the registration form
 

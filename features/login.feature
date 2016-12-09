@@ -1,7 +1,8 @@
 Feature: Login
 
   Background:
-    Given I am on the homepage
+    Given I am logged out
+    And I am on the homepage
     When I click on the Login link
     Then I should see the login form
 
