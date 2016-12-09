@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       #hname = :household_name
+
       if sign_up_params[:code] == ""
         
         puts "#{sign_up_params[:household_name]}" + "\n\n\n"
@@ -20,21 +21,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
           break
         else
           resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
-          #resource.build_grocery_list(user_id: sign_up_params[:email])
           resource.save
 
 
 
         end
       else
-        if Household.exists?(name: sign_up_params[:household_name]) #@user.household.exists?
+        if Household.exists?(name: sign_up_params[:household_name]) 
           
         
-          house = Household.where(name: sign_up_params[:household_name]).take #.where(sign_up_params[:household_name])
+          house = Household.where(name: sign_up_params[:household_name]).take 
           if sign_up_params[:code] == house.code
             puts "\n\n\n\n\n HELLO"
             resource.build_household(name: sign_up_params[:household_name])
-            #resource.build_grocery_list(user_id: sign_up_params[:email])
+
             resource.save
 
 
@@ -42,8 +42,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
            
             
             #@user = User.new
+
           else
-            #puts "#{house.code}" + "\n\n\n"
             
             move("Invalid Code\n\n\n\n\n\n")
             break
@@ -59,7 +59,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   def move(sss)
-    #ApplicationController.flash_message(sss)
     redirect_to new_user_registration_path
     puts sss
   end
