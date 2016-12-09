@@ -47,6 +47,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'guard'
@@ -56,6 +57,7 @@ group :development, :test do
   gem 'shoulda', '~> 3.5', require: false
   gem 'shoulda-matchers', '~> 2.0', require: false
   gem 'foreman'
+  gem 'factory_girl'
 end
 
 group :development do

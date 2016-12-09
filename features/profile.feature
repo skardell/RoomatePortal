@@ -8,8 +8,9 @@ Feature: Account information features
     Then I should see my account information
 
   Scenario: A user edits their account information
-    Given I am on my Account page
+    When I am on my Account page
+    Then I should see my account information
     When I edit my account information
     And I press the "Confirm" button
     Then I should see my updated account information
-    And I should see a successful message flash
+    And I should see a flash "success"

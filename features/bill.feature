@@ -1,7 +1,7 @@
 Feature: Bills page features
 
   Background:
-    Given I am signed into my account
+    Given I am logged into my account
 
   Scenario: A user visits the Bills page
     When I visit the Bills page
