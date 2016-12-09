@@ -1,6 +1,7 @@
 FactoryGirl.define do
   
   factory :household do
+    name "testHousehold"
     code 411
   end
   
