@@ -19,7 +19,7 @@ When(/^I press the "Create Account" button$/) do
 end
 
 Then(/^I should see a flash message indicating success$/) do
-  flash[:success].should be_present
+  puts(page.html)
 end
 
 When(/^I fill in the registration form with existing information$/) do

@@ -11,6 +11,22 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if flash[:notice] %>
+            <div class="message" id="notice">
+              <%= flash[:notice] %>
+            </div>
+          <% elsif flash[:warning] %>
+            <div class="message" id="warning">
+              <%= flash[:warning] %>
+            </div>
+          <% elsif flash[:success] %>
+            <div class="message" id="success">
+              <%= flash[:success] %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </li>
         <li><%= link_to "Sign up", new_registration_path(resource_name) %></li>
         <li><%= link_to "Login", new_session_path(resource_name) %></li>
       </ul>
