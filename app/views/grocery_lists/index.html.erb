@@ -5,19 +5,12 @@
 
     <div class="col-md-10">
       <div id="midCol" data-spy="affix" data-offset-top="300">
+<<<<<<< HEAD
         
-        <script>
-        <%=if !GroceryList.exists?(user: current_user.id) 
-            #redirect_to new_grocery_list_path 
-          
-          
+        
+=======
 
-           end %>
-        </script>
-        
-        
-        
-        
+>>>>>>> 2bed6f76120ea330c1151771ab6148df3663ec80
         <div>
           <h2>Groceries</h2>
           <%= link_to 'Add Grocery Item', new_grocery_item_path %>
@@ -32,13 +25,24 @@
               <th>Amount</th>
             </tr>
             </thead>
+
             <tbody>
-            <tr>
-              <td>Item A</td>
-              <td>XX</td>
-            </tr>
+              <% gllist = GroceryList.where(user_id: current_user.id) %>
+              <% @groceries = GroceryItem.where(grocery_list_id: gllist).all %>
+              <% @groceries.each do |item| %>
+              
+                <tr> 
+                  <td><%= item.name %></td>
+                  <td><%= item.amount %></td>
+                </tr>
+                
+              <% end %>
+           
             </tbody>
+
           </table>
+        </div>
+        
         </div>
 
       </div>

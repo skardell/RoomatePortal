@@ -1,8 +1,13 @@
 <script>
 <%= if current_user.code != "" 
-       current_user.household_id = User.where(household_name: current_user.household_name).first.household_id  
+       current_user.household_id = User.where(household_name: current_user.household_name).first.household_id
+       current_user.role = "Roommate"
        current_user.save 
+    else
+       current_user.role = "Household Owner"
+       current_user.save
     end %>
+
 <%=   puts "\n\n\n\n\n\n #{current_user.household_id} \n\n\n\n\n" %>
 </script>
 
@@ -31,7 +36,7 @@
             <% @chores = Chore.all %>
             <% @chores.each do |chore| %>
             <% if chore.assignee_id == current_user.id %>
-            <tr> <% puts "\n\n\n\n\n\n\n\n\n #{chore.name}" %>
+            <tr> 
               <td><%= chore.name %></td>
               <td><%= chore.requestor %></td>
               <td><%= chore.status %></td>
@@ -70,14 +75,20 @@
             <tr>
               <th>Item</th>
               <th>Amount</th>
-              <th>List</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td>Grocery</td>
-              <td>XX</td>
-              <td>List</td>
+              <% gllist = GroceryList.where(user_id: current_user.id) %>
+              <% @groceries = GroceryItem.where(grocery_list_id: gllist).all %>
+              <% @groceries.each do |item| %>
+              
+                <tr> 
+                  <td><%= item.name %></td>
+                  <td><%= item.amount %></td>
+                </tr>
+              
+              <% end %>
             </tr>
             </tbody>
           </table>
