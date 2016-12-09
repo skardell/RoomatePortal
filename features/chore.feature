@@ -23,16 +23,16 @@ Feature: Chore page features
     When I click on the chore's "Cancel" button
     Then I should see the list of Household Chores
 
-  Scenario: A user views an incomplete chore
+  Scenario: A user views and accepts an incomplete chore
     Given I am on the chore creation page
     When I fill in the information forms
     And I click the "Create" button
     Then I should be on that chore's information page
-    # And I can return to the Chores page by clicking the "Back" button
     And I can accept the chore by clicking the "Accept" button
 
   Scenario: A user views a chore accepted by another user
     Given I am on the Chores page
+    And I have an accepted chore
     When I click on an accepted chore
     Then I should be on that chore's information page
     And I can see who accepted the chore

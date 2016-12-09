@@ -52,17 +52,25 @@ Then(/^I can return to the Chores page by clicking the "Back" button$/) do
   click_on 'Back'
 end
 
+Given(/^I have an accepted chore$/) do 
+  pending
+  step 'I am on the chore creation page'
+  step 'I fill in the information forms'
+  step 'I click the "Create" button'
+  step 'I can accept the chore by clicking the "Accept" button'
+end
+
 Then(/^I can accept the chore by clicking the "Accept" button$/) do
-  # puts page.html
-  click_on 'Accept'
+  pending
+  # click_on 'Accept'
 end
 
 When(/^I click on an accepted chore$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  find(:xpath, '/html/body//td[1]/a').click
 end
 
 Then(/^I can see who accepted the chore$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  # puts page.html
 end
 
 When(/^I click on a chore I accepted$/) do
