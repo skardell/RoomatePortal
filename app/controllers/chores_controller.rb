@@ -32,7 +32,7 @@ class ChoresController < ApplicationController
 
     respond_to do |format|
       if @chore.save!
-        format.html { redirect_to @chore, notice: 'Chore was successfully created.' }
+        format.html { redirect_to @chore }
         format.json { render :show, status: :created, location: @chore }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class ChoresController < ApplicationController
   def update
     respond_to do |format|
       if @chore.update(chore_params)
-        format.html { redirect_to @chore, notice: 'Chore was successfully updated.' }
+        format.html { redirect_to @chore }
         format.json { render :show, status: :ok, location: @chore }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class ChoresController < ApplicationController
   def destroy
     @chore.destroy
     respond_to do |format|
-      format.html { redirect_to chores_url, notice: 'Chore was successfully destroyed.' }
+      format.html { redirect_to chores_url }
       format.json { head :no_content }
     end
   end

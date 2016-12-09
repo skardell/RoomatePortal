@@ -10,9 +10,8 @@
           <%= link_to 'Add Bill', new_bill_path %>
         </div>
 
-        <%= @bills.each do |bill| %>
         <div class="well">
-          <h3><%= bill.name %></h3>
+          <h3>Rent</h3>
           <table class="table table-hover">
             <thead>
             <tr>
@@ -23,19 +22,75 @@
             </tr>
             </thead>
             <tbody>
-            <%= @user_bill_status.each do |status| %>
             <tr>
-              <td>status.user.name</td>
-              <td>status.bill.cost</td>
-              <td>status.bill.due_date</td>
-              <td>status.status</td>
+              <td>Chris</td>
+              <td>$375.00</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Paid</td>
             </tr>
-            <% end %>
+            <tr>
+              <td>Luke</td>
+              <td>$375.00</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Paid</td>
+            </tr>
+            <tr>
+              <td>Steven</td>
+              <td>$375.00</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Unpaid</td>
+            </tr>
+            <tr>
+              <td>Harrison</td>
+              <td>$375.00</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Unpaid</td>
+            </tr>
             </tbody>
           </table>
           <button>Edit Bill</button>
         </div>
-        <% end %>
+
+        <div class="well">
+          <h3>Utilities</h3>
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>Roommate</th>
+              <th>Amount</th>
+              <th>Due Date</th>
+              <th>Paid</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Chris</td>
+              <td>$86.34</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Unpaid</td>
+            </tr>
+            <tr>
+              <td>Luke</td>
+              <td>$86.34</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Paid</td>
+            </tr>
+            <tr>
+              <td>Steven</td>
+              <td>$86.34</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Paid</td>
+            </tr>
+            <tr>
+              <td>Harrison</td>
+              <td>$86.34</td>
+              <td>2016-12-29 23:59:59 UTC</td>
+              <td>Unpaid</td>
+            </tr>
+            </tbody>
+          </table>
+          <button>Edit Bill</button>
+        </div>
 
       </div>
     </div>

@@ -10,11 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
   def create
     super do
+
       #hname = :household_name
 
       if sign_up_params[:code] == ""
         
-        puts "#{sign_up_params[:household_name]}" + "\n\n\n"
+        # puts "#{sign_up_params[:household_name]}" + "\n\n\n"
         if Household.exists?(name: sign_up_params[:household_name])  #@user.household.exists?
           
           move("Household Taken")
