@@ -1,7 +1,7 @@
 Feature: Groceries page features
 
   Background:
-    Given I am signed into my account
+    Given I am logged into my account
 
   Scenario: A user visits the Groceries page
     When I am on the Groceries page
