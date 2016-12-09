@@ -17,15 +17,18 @@
 
           <% if @chore.user_id == current_user.id %>
             <% if @chore.status == "Completed" %>
-             <%= link_to 'Delete', chores_path, class: 'btn btn-danger btn-small text', :action => :destroy %>
+             <%= link_to 'Delete', chores_path, class: 'btn btn-danger btn-small text', :action => @chore.destroy %>
             <% else %>
               <%= link_to 'Edit', edit_chore_path(@chore), class: 'btn btn-success btn-small text', :method => :get %>
             <% end %>
           <% else %>
             <% if @chore.status == "Unaccepted" %>
              <%= link_to 'Accept', chores_path, class: 'btn btn-success btn-small text', :action => @chore.update_attribute(:assignee_id, current_user.id), :action => @chore.update_attribute(:status, "Accepted by #{(User.where(id:  @chore.assignee_id).take).name}") %>
-            <% else %>
+            <% else if @chore.status == "Accepted by #{current_user.name}" %>
+              <%= link_to 'Complete', chores_path, class: 'btn btn-success btn-small text', :action => @chore.update_attribute(:status, "Completed") %>
             
+            
+            <% end %>
             <% end %>
           
 
