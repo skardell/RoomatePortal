@@ -27,6 +27,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
           break
         else
           resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
+          #resource.build_grocery_list(user_id: sign_up_params[:email])
           resource.save
         end
       else
@@ -37,6 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
           if sign_up_params[:code] == house.code
             puts "\n\n\n\n\n HELLO"
             resource.build_household(name: sign_up_params[:household_name])
+            #resource.build_grocery_list(user_id: sign_up_params[:email])
             resource.save
             
             #current_user.household_id = User.where(household_name: current_user.household.name).first.household_id
