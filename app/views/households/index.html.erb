@@ -19,10 +19,16 @@
             </thead>
             <tbody>
             <tr>
-              <td>Name</td>
-              <td>Email</td>
-              <td>Head of Household</td>
-            </tr>
+              <% @users = User.all %>
+              <% @users.each do |user| %>
+              <% if user.household.id == current_user.household.id %>
+              <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.name %></td>
+              </tr>
+            <% end %>
+            <% end %>
             </tbody>
           </table>
           <%= link_to 'Invite Member', new_household_user_path %>

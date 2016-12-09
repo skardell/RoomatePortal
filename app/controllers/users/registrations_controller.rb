@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # POST /resource
   def create
     super do
+<<<<<<< HEAD
       # puts "got here"
       # #resource.build_household(code: sign_up_params[:code], name: sign_up_params[:name])
       # puts "GOT HERE"
@@ -17,7 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # puts "HERE GOT"
 
      # puts "AHHHHHHHHH #{@user.household.name} \r \n \n peep"
+=======
+>>>>>>> 9783fe8947d45fafe8b817fed6a14647e07ba49f
       #hname = :household_name
+
       if sign_up_params[:code] == ""
         
         # puts "#{sign_up_params[:household_name]}" + "\n\n\n"
@@ -27,26 +31,29 @@ class Users::RegistrationsController < Devise::RegistrationsController
           break
         else
           resource.build_household(code: "#{rand(1000)}", name: sign_up_params[:household_name])
-          #resource.build_grocery_list(user_id: sign_up_params[:email])
           resource.save
+
+
+
         end
       else
-        if Household.exists?(name: sign_up_params[:household_name]) #@user.household.exists?
+        if Household.exists?(name: sign_up_params[:household_name]) 
           
         
-          house = Household.where(name: sign_up_params[:household_name]).take #.where(sign_up_params[:household_name])
+          house = Household.where(name: sign_up_params[:household_name]).take 
           if sign_up_params[:code] == house.code
             puts "\n\n\n\n\n HELLO"
             resource.build_household(name: sign_up_params[:household_name])
-            #resource.build_grocery_list(user_id: sign_up_params[:email])
+
             resource.save
-            
+
+
             #current_user.household_id = User.where(household_name: current_user.household.name).first.household_id
            
             
             #@user = User.new
+
           else
-            #puts "#{house.code}" + "\n\n\n"
             
             move("Invalid Code\n\n\n\n\n\n")
             break
@@ -62,10 +69,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   def move(sss)
-    #ApplicationController.flash_message(sss)
     redirect_to new_user_registration_path
     puts sss
   end
+
 # GET /resource/edit
 # def edit
 #   super
@@ -100,7 +107,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   def sign_up_params
-   params.require(:user).permit(:email, :password, :password_confirmation, :household_name, :code)
+   params.require(:user).permit(:email, :password, :password_confirmation, :household_name, :code, :name)
   end
 
   # If you have extra params to permit, append them to the sanitizer.

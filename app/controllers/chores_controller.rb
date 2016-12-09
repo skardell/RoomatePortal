@@ -15,8 +15,6 @@ class ChoresController < ApplicationController
   # GET /chores/new
   def new
     @chore = Chore.new
-    @chore.user = current_user
-    @chore.household= current_user.household
   end
 
   # GET /chores/1/edit
@@ -28,7 +26,8 @@ class ChoresController < ApplicationController
   def create
     @chore = Chore.new chore_params
     @chore.user = current_user
-    @chore.household= current_user.household
+    @chore.household = current_user.household
+    @chore.requestor = current_user.name
     @chore.status = 'Unaccepted'
 
     respond_to do |format|
