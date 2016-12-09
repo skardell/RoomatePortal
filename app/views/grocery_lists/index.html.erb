@@ -30,7 +30,7 @@
                 <tr> 
                   <td><%= item.name %></td>
                   <td><%= item.amount %></td>
-                  <td><%= link_to 'Delete', grocery_list_path, class: 'btn btn-danger btn-small text', :action => item.destroy %></td>
+                  <td><%= link_to 'Delete', grocery_lists_path, class: 'btn btn-danger btn-small text', :action => item.destroy %></td>
                 </tr>
                 
               <% end %>
