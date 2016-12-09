@@ -30,13 +30,13 @@
             
             <% @chores = Chore.all %>
             <% @chores.each do |chore| %>
-            <% if chore.assignee_id == current_user.id %>
-            <tr> <% puts "\n\n\n\n\n\n\n\n\n #{chore.name}" %>
-              <td><%= chore.name %></td>
-              <td><%= chore.requestor %></td>
-              <td><%= chore.status %></td>
-            </tr>
-            <% end %>
+              <% if chore.assignee_id == current_user.id %>
+                <tr> <% puts "\n\n\n\n\n\n\n\n\n #{chore.name}" %>
+                  <td><%= chore.name %></td>
+                  <td><%= chore.requestor %></td>
+                  <td><%= chore.status %></td>
+                </tr>
+              <% end %>
             <% end %>
             <!--< end %>-->
             </tbody>

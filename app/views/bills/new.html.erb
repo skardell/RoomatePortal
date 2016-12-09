@@ -11,6 +11,7 @@
             <%= f.input :name, :input_html => {:style => 'width: 50%'}%>
             <%= f.input :cost, :input_html => {:style => 'width: 30%'}%>
             <%= f.input :due_date %>
+            <%= f.association :users %>
             <%= f.button :submit %>
         <% end %>
 
